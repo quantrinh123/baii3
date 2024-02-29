@@ -17,12 +17,7 @@ public class Bai3Application {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Config.class);
         ProductService service = context.getBean("productService", ProductService.class);
         Scanner sc = new Scanner(System.in);
-        List<ProductEntity> allProducts = service.productList();
 
-        System.out.println("All Products:");
-        for (ProductEntity product : allProducts) {
-            System.out.println(product.toString());
-        }
         for(int i = 0; i < 10; i++){
             ProductEntity product = new ProductEntity();
             product.setProductDescription("quan dep"+ i);
@@ -30,7 +25,12 @@ public class Bai3Application {
             product.setUnitPrice(400 + i);
             service.saveProduct(product);
         }
+        List<ProductEntity> allProducts = service.productList();
 
+        System.out.println("All Products:");
+        for (ProductEntity product : allProducts) {
+            System.out.println(product.toString());
+        }
 
         System.out.println("Please input page number:");
         int pageNumber = 0;
