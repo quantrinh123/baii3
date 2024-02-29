@@ -60,19 +60,11 @@ public class ProductEntity {
 
     @Override
     public String toString() {
-        return "Product{" +
+        return "Product:" +
                 "productID=" + productID +
                 ", productName='" + productName + '\'' +
                 ", productDescription='" + productDescription + '\'' +
-                ", unitPrice=" + unitPrice +
-                ", orderDetail=" + orderDetail +
-                '}';
+                ", unitPrice=" + unitPrice 
+                ;
     }
-//    public void input(){
-//        Scanner sc = new Scanner(System.in);
-//        System.out.println("Please input product name: ");
-//        productName = sc.nextLine();
-//        System.out.println("Please input product description: ");
-//
-//    }
 }

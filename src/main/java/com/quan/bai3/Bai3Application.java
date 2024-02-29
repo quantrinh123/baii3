@@ -17,23 +17,21 @@ public class Bai3Application {
         ProductService service = context.getBean("productService", ProductService.class);
         Scanner sc = new Scanner(System.in);
 
-        for(int i = 0; i < 10; i++){
-            ProductEntity product = new ProductEntity();
-            product.setProductDescription("quan dep"+ i);
-            product.setProductName("quan"+i);
-            product.setUnitPrice(400 + i);
-            service.saveProduct(product);
-        }
+//        for(int i = 0; i < 10; i++){
+//            ProductEntity product = new ProductEntity();
+//            product.setProductDescription("quan dep"+ i);
+//            product.setProductName("quan"+i);
+//            product.setUnitPrice(20 + i);
+//            service.saveProduct(product);
+//        }
         List<ProductEntity> allProducts = service.listAll();
-
         System.out.println("All Products:");
         for (ProductEntity product : allProducts) {
             System.out.println(product.toString());
         }
 
-        System.out.println("Please input page number:");
         int pageNumber = 0;
-        System.out.println("PHan trang");
+        System.out.println("Phan trang");
         for(int i = 0; i < service.paginationProducts(pageNumber).getTotalPages(); i++){
             System.out.println("Trang"+ i);
             service.paginationProducts(i).forEach(product -> {
@@ -45,10 +43,7 @@ public class Bai3Application {
             System.out.println("Trang"+ i);
             service.sortPagination(i);
         }
-        System.out.println(" tổng số lượng : " + service.paginationProducts(pageNumber).getTotalElements());
-        System.out.println(" tổng số trang " + service.paginationProducts(pageNumber).getTotalPages());
-
-        System.out.println("Please input name of product: ");
+        System.out.println("name want to search: ");
         String productName = sc.nextLine();
         List<ProductEntity> searchResults = service.searchByName(productName);
         for (ProductEntity product : searchResults) {
