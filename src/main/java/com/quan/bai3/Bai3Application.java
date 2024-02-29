@@ -3,7 +3,6 @@ package com.quan.bai3;
 import com.quan.bai3.config.Config;
 import com.quan.bai3.entity.ProductEntity;
 import com.quan.bai3.service.ProductService;
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -25,7 +24,7 @@ public class Bai3Application {
             product.setUnitPrice(400 + i);
             service.saveProduct(product);
         }
-        List<ProductEntity> allProducts = service.productList();
+        List<ProductEntity> allProducts = service.listAll();
 
         System.out.println("All Products:");
         for (ProductEntity product : allProducts) {
@@ -44,7 +43,7 @@ public class Bai3Application {
         System.out.println("sap xep giam dan");
         for(int i = 0; i < service.paginationProducts(pageNumber).getTotalPages(); i++){
             System.out.println("Trang"+ i);
-            service.paginationAndSortProducts(i);
+            service.sortPagination(i);
         }
         System.out.println(" tổng số lượng : " + service.paginationProducts(pageNumber).getTotalElements());
         System.out.println(" tổng số trang " + service.paginationProducts(pageNumber).getTotalPages());

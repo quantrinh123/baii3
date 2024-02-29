@@ -6,10 +6,11 @@ import org.springframework.data.domain.Page;
 import java.util.List;
 
 public interface ProductService {
-    List<ProductEntity> productList();
+    List<ProductEntity> listAll();
     Page<ProductEntity> paginationProducts(int pageNumber);
-    void paginationAndSortProducts(int pageNumber);
+    void sortPagination(int pageNumber);
     void saveProduct(ProductEntity product);
 
     List <ProductEntity> searchByName(String name);
 }
+

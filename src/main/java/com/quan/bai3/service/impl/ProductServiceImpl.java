@@ -21,7 +21,7 @@ public class ProductServiceImpl implements ProductService {
 
 
     @Override
-    public List<ProductEntity> productList() {
+    public List<ProductEntity> listAll() {
         return productRepository.findAll();
     }
 
@@ -32,7 +32,7 @@ public class ProductServiceImpl implements ProductService {
 
 
     @Override
-    public void paginationAndSortProducts(int pageNumber) {
+    public void sortPagination(int pageNumber) {
         Page<ProductEntity> page = productRepository.findAll(PageRequest.of(pageNumber, 5));
         List<ProductEntity> products = new ArrayList<>(page.getContent());
         products.sort(Comparator.comparing(ProductEntity::getUnitPrice).reversed());
