@@ -16,7 +16,15 @@ public class ProductEntity {
     private double unitPrice;
 
     @OneToMany(fetch = FetchType.EAGER,mappedBy = "product1")
-    List<OrderDetail> orderDetail;
+    List<OrderDetailEntity> orderDetail;
+
+    public ProductEntity(String imagePath) {
+        this.imagePath = imagePath;
+    }
+
+    public ProductEntity() {
+
+    }
 
     public Long getProductID() {
         return productID;
@@ -50,13 +58,14 @@ public class ProductEntity {
         this.unitPrice = unitPrice;
     }
 
-    public List<OrderDetail> getOrderDetail() {
+    public List<OrderDetailEntity> getOrderDetail() {
         return orderDetail;
     }
 
-    public void setOrderDetail(List<OrderDetail> orderDetail) {
+    public void setOrderDetail(List<OrderDetailEntity> orderDetail) {
         this.orderDetail = orderDetail;
     }
+    private String imagePath;
 
     @Override
     public String toString() {
@@ -64,7 +73,14 @@ public class ProductEntity {
                 "productID=" + productID +
                 ", productName='" + productName + '\'' +
                 ", productDescription='" + productDescription + '\'' +
-                ", unitPrice=" + unitPrice 
+                ", unitPrice=" + unitPrice
                 ;
+    }
+    public String getImagePath() {
+        return imagePath;
+    }
+
+    public void setImagePath(String imagePath) {
+        this.imagePath = imagePath;
     }
 }

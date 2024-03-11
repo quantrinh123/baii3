@@ -15,7 +15,7 @@ public class OrderEntity{
     private String customerName;
     private String customerAddress;
     @OneToMany(mappedBy = "order1",fetch = FetchType.EAGER)
-    private List<OrderDetail> orderDetail;
+    private List<OrderDetailEntity> orderDetail;
 
     public int getOrderId() {
         return orderId;
@@ -49,11 +49,11 @@ public class OrderEntity{
         this.customerAddress = customerAddress;
     }
 
-    public List<OrderDetail> getOrderDetail() {
+    public List<OrderDetailEntity> getOrderDetail() {
         return orderDetail;
     }
 
-    public void setOrderDetail(List<OrderDetail> orderDetail) {
+    public void setOrderDetail(List<OrderDetailEntity> orderDetail) {
         this.orderDetail = orderDetail;
     }
 }

@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 
 @Entity
 
-public class OrderDetail {
+public class OrderDetailEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
