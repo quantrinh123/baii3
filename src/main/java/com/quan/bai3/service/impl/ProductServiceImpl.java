@@ -98,5 +98,11 @@ public class ProductServiceImpl implements ProductService {
         productRepository.deleteById(productId);
     }
 
+    @Override
+    public List<ProductEntity> getProductsByPriceRange(Double minPrice, Double maxPrice) {
+        return productRepository.findByUnitPriceBetween(minPrice, maxPrice);
+    }
+
+
 }
 

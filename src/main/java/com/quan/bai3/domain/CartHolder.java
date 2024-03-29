@@ -13,6 +13,17 @@ public class CartHolder {
     private final Map<Long, Integer> cartEntitie = new HashMap<>();
     List<CartEntity> cartEntities = new ArrayList<>();
 
+    public void copyDataToMap() {
+        for (CartEntity cartEntity : cartEntities) {
+            ProductEntity productEntity = cartEntity.getProductEntity();
+            int productHashCode = productEntity.hashCode();
+
+
+            cartEntitie.put((long) productHashCode, cartEntity.getAmount());
+        }
+    }
+
+
     public List<CartEntity> getCartEntities() {
         return cartEntities;
     }

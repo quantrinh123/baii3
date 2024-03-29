@@ -28,5 +28,8 @@ public interface ProductService {
 
 
     void deleteProductById(Long productId);
+
+
+    List<ProductEntity> getProductsByPriceRange(Double minPrice, Double maxPrice);
 }
 

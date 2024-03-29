@@ -15,7 +15,7 @@ import java.util.Scanner;
 public class Bai3Application {
 
     public static void main(String[] args) throws Exception {
-       SpringApplication.run(Bai3Application.class, args);
+           SpringApplication.run(Bai3Application.class, args);
 
 //        Scanner sc = new Scanner(System.in);
 //        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Config.class);

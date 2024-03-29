@@ -59,7 +59,7 @@
                     <td th:text="${pro.getUnitPrice()}"></td>
                     <td>
 
-                        <a th:href="@{/Admin/delete/{id}(id=${pro.getProductID()})}"  class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                        <a th:href="@{/Admin/delete/{id}(id=${pro.getProductID()})}"  class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
                         <a href="managerDelProduct?ID=${pro.getID()}" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
                     </td>
                 </tr>
